@@ -621,14 +621,14 @@ mediate <- function(model.m, model.y, sims = 1000,
 
       if(!is.null(model.m$weights)){
           m.weights <- as.data.frame(model.m$weights)
-          m.name <- parse(model.m$call$weights)  
+          m.name <- deparse(model.m$call$weights)  
           names(m.weights) <- m.name
           m.data <- cbind(m.data, m.weights)
       }
 
       if(!is.null(model.y$weights)){
           y.weights <- as.data.frame(model.y$weights)
-          y.name <- parse(model.y$call$weights)  
+          y.name <- deparse(model.y$call$weights)  
           names(y.weights) <- y.name
           y.data <- cbind(y.data, y.weights)
       }
